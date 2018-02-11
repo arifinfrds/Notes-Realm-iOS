@@ -7,18 +7,75 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Note {
-    
+class Note: Object {
     
     // MARK: - Properties
     
-    var id: String
-    var title: String
-    var content: String
+    @objc dynamic var id: String = ""
+    @objc dynamic var title: String = ""
+    @objc dynamic var content: String = ""
     
     
-    // MARK: - Public API's
+    // MARK: - Constructor
+    
+    convenience init(id: String, title: String, content: String) {
+        self.init()
+        self.id = id
+        self.title = title
+        self.content = content
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// MARK: - Public API's
 //
 //    func toDictionary() -> [String: Any] {
 //
@@ -38,5 +95,3 @@ struct Note {
 //            "content": _content
 //        ]
 //    }
-    
-}

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddNoteViewController: UIViewController {
     
@@ -32,11 +33,22 @@ class AddNoteViewController: UIViewController {
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {
+        
+        if (titleTextField.text?.isEmpty)! {
+            self.showAlertController(with: "Error", message: "Please fill textfield.")
+            return
+        }
+        
+        if (contentTextField.text?.isEmpty)! {
+            self.showAlertController(with: "Error", message: "Please fill textfield.")
+            return
+        }
+        
+        guard let title = self.titleTextField.text else { return }
+        guard let content = self.contentTextField.text else { return }
+        
         dismiss(animated: true) {
             let id = RandomStringGenerator.randomString(length: 16)
-            guard let title = self.titleTextField.text else { return }
-            guard let content = self.contentTextField.text else { return }
-            
             let note = Note(id: id, title: title, content: content)
             self.saveNote(with: note)
         }
@@ -52,7 +64,14 @@ class AddNoteViewController: UIViewController {
     }
     
     private func saveNote(with note: Note) {
-        print(note.id)
+        
+        // Get the default Realm
+        let realm = try! Realm()
+        
+        // Persist your data easily
+        try! realm.write {
+            realm.add(note)
+        }
     }
     
     
