@@ -19,6 +19,8 @@
 		54D0B747202F547300D85C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D0B745202F547300D85C1B /* LaunchScreen.storyboard */; };
 		54D0B750202F552700D85C1B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D0B74F202F552700D85C1B /* Extensions.swift */; };
 		54D0B753202F554300D85C1B /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D0B752202F554300D85C1B /* Note.swift */; };
+		926EEBDB2030491600C506F0 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926EEBDA2030491600C506F0 /* AddNoteViewController.swift */; };
+		926EEBDE20304D1000C506F0 /* RandomStringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926EEBDD20304D1000C506F0 /* RandomStringGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		54D0B748202F547300D85C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D0B74F202F552700D85C1B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		54D0B752202F554300D85C1B /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		926EEBDA2030491600C506F0 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		926EEBDD20304D1000C506F0 /* RandomStringGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomStringGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		54D0B73B202F547300D85C1B /* Notes-Realm-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				926EEBDC20304CFA00C506F0 /* helper */,
 				54D0B74E202F54BF00D85C1B /* extension */,
 				54D0B751202F553700D85C1B /* model */,
 				54D0B754202F55D700D85C1B /* view */,
@@ -120,9 +125,26 @@
 		54D0B755202F55EB00D85C1B /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				926EEBD9203048FD00C506F0 /* add note */,
 				54CB9159202F620500DF9B43 /* note */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		926EEBD9203048FD00C506F0 /* add note */ = {
+			isa = PBXGroup;
+			children = (
+				926EEBDA2030491600C506F0 /* AddNoteViewController.swift */,
+			);
+			path = "add note";
+			sourceTree = "<group>";
+		};
+		926EEBDC20304CFA00C506F0 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				926EEBDD20304D1000C506F0 /* RandomStringGenerator.swift */,
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +222,10 @@
 			files = (
 				54D0B73F202F547300D85C1B /* NoteViewController.swift in Sources */,
 				54D0B750202F552700D85C1B /* Extensions.swift in Sources */,
+				926EEBDB2030491600C506F0 /* AddNoteViewController.swift in Sources */,
 				54CB9157202F5FFE00DF9B43 /* NoteCell.swift in Sources */,
 				54CB915D202F625800DF9B43 /* NoteViewController+UITableViewDelegate.swift in Sources */,
+				926EEBDE20304D1000C506F0 /* RandomStringGenerator.swift in Sources */,
 				54CB915B202F622600DF9B43 /* NoteViewController+UITableViewDataSource.swift in Sources */,
 				54CB915F202F650600DF9B43 /* Resources.swift in Sources */,
 				54D0B73D202F547300D85C1B /* AppDelegate.swift in Sources */,

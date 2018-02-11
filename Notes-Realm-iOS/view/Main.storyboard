@@ -20,7 +20,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tableView>
                     <navigationItem key="navigationItem" title="Notes Realm" id="zY7-Sa-iBa">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tE1-63-tW3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tE1-63-tW3">
+                            <connections>
+                                <action selector="addNote:" destination="RQK-FQ-STy" id="VA3-Y2-Q6B"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="qI4-YP-f5K" id="Lhm-fP-dkQ"/>
@@ -78,7 +82,7 @@
         <!--Add Note-->
         <scene sceneID="mJN-b9-Lya">
             <objects>
-                <viewController id="54q-Jc-sY0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="add_note_view_controller" id="54q-Jc-sY0" customClass="AddNoteViewController" customModule="Notes_Realm_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rpe-mg-nCM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,9 +114,21 @@
                         <viewLayoutGuide key="safeArea" id="9tI-JS-EeA"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Note" id="ojx-Jb-8cs">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IRw-ZO-sH6"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ye1-Wx-jPo"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IRw-ZO-sH6">
+                            <connections>
+                                <action selector="cancel:" destination="54q-Jc-sY0" id="xFZ-sb-OIE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ye1-Wx-jPo">
+                            <connections>
+                                <action selector="done:" destination="54q-Jc-sY0" id="e3d-z3-odO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contentTextField" destination="FMp-vz-gis" id="tfB-0Y-eHN"/>
+                        <outlet property="titleTextField" destination="1zp-qH-00K" id="E6c-ZP-Dpv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9I-7D-pl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -139,7 +155,7 @@
         <!--Navigation Controller-->
         <scene sceneID="RPu-2d-i7h">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B96-h0-yOu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="add_note_navigation_controller" automaticallyAdjustsScrollViewInsets="NO" id="B96-h0-yOu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZRY-1o-eVR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
