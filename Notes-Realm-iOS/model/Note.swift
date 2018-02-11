@@ -13,30 +13,30 @@ struct Note {
     
     // MARK: - Properties
     
-    var id: String?
-    var title: String?
-    var content: String?
+    var id: String
+    var title: String
+    var content: String
     
     
     // MARK: - Public API's
-    
-    func toDictionary() -> [String: Any] {
-        
-        guard
-            let _id = self.id,
-            let _title = self.title,
-            let _content = self.content
-            else {
-                return [
-                    "data": false
-                ]
-        }
-        
-        return [
-            "id" : _id,
-            "title" : _title,
-            "content": _content
-        ]
-    }
+//
+//    func toDictionary() -> [String: Any] {
+//
+//        guard
+//            let _id = self.id,
+//            let _title = self.title,
+//            let _content = self.content
+//            else {
+//                return [
+//                    "data": false
+//                ]
+//        }
+//
+//        return [
+//            "id" : _id,
+//            "title" : _title,
+//            "content": _content
+//        ]
+//    }
     
 }

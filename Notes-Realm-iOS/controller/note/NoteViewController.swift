@@ -24,6 +24,13 @@ class NoteViewController: UIViewController {
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     }
     
+    // MARK: - IBAction
+    @IBAction func addNote(_ sender: UIBarButtonItem) {
+        if let navigationController = storyboard?.instantiateViewController(withIdentifier: "add_note_navigation_controller") as? UINavigationController {
+            present(navigationController, animated: true, completion: nil)
+        }
+        
+    }
     
     // MARK: - Private API's
     
