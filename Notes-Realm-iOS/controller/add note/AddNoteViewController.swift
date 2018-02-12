@@ -47,11 +47,10 @@ class AddNoteViewController: UIViewController {
         guard let title = self.titleTextField.text else { return }
         guard let content = self.contentTextField.text else { return }
         
-        dismiss(animated: true) {
-            let id = RandomStringGenerator.randomString(length: 16)
-            let note = Note(id: id, title: title, content: content)
-            self.saveNote(with: note)
-        }
+        let id = RandomStringGenerator.randomString(length: 16)
+        let note = Note(id: id, title: title, content: content)
+        saveNote(with: note)
+        
     }
     
     
@@ -71,6 +70,7 @@ class AddNoteViewController: UIViewController {
         // Persist your data easily
         try! realm.write {
             realm.add(note)
+            dismiss(animated: true, completion: nil)
         }
     }
     
