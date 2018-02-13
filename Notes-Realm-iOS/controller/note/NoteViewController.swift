@@ -72,6 +72,7 @@ class NoteViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "note_cell")
     }
     
+    // Realm Stuff
     private func fetchNotes() {
         // Get the default Realm
         let realm = try! Realm()
@@ -81,5 +82,15 @@ class NoteViewController: UIViewController {
             notes.append(note)
         }
     }
+    
+    internal func deleteNoteDatabase(at indexPath: IndexPath) {
+        let note = notes[indexPath.row]
+        let realm = try! Realm()
+        try! realm.write {
+            realm.delete(note)
+        }
+    }
+    
+
     
 }
