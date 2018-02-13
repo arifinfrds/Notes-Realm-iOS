@@ -35,6 +35,19 @@ class NoteViewController: UIViewController {
         tableView.reloadData()
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segue_edit_note_navigation_controller" {
+            if let navigationVC = segue.destination as? UINavigationController {
+                if let editNoteVC = navigationVC.topViewController as? EditNoteViewController {
+                    if let noteId = sender as? String {
+                        editNoteVC.noteId = noteId
+                    }
+                }
+            }
+        }
+    }
+    
     
     // MARK: - IBAction
     
@@ -70,12 +83,3 @@ class NoteViewController: UIViewController {
     }
     
 }
-
-
-
-
-
-
-
-
-

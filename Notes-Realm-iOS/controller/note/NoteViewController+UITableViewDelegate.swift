@@ -12,7 +12,9 @@ import UIKit
 extension NoteViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        let note = notes[indexPath.row]
+        performSegue(withIdentifier: "segue_edit_note_navigation_controller", sender: note.id)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

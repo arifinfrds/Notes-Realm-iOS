@@ -50,7 +50,6 @@ class AddNoteViewController: UIViewController {
         let id = RandomStringGenerator.randomString(length: 16)
         let note = Note(id: id, title: title, content: content)
         saveNote(with: note)
-        
     }
     
     
