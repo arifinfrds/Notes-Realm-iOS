@@ -29,7 +29,7 @@
                     <connections>
                         <outlet property="tableView" destination="qI4-YP-f5K" id="Lhm-fP-dkQ"/>
                         <segue destination="B96-h0-yOu" kind="show" identifier="segue_add_note_view_controller" id="NzL-6M-Xms"/>
-                        <segue destination="TU5-PW-Brs" kind="show" identifier="segue_edit_note_view_controller" id="P0h-am-1mD"/>
+                        <segue destination="TU5-PW-Brs" kind="show" identifier="segue_edit_note_navigation_controller" id="PVc-hj-e4B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cp-cY-TK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -39,7 +39,7 @@
         <!--Edit Note-->
         <scene sceneID="hnD-a3-VDq">
             <objects>
-                <viewController id="4HA-XK-dHk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="edit_note_view_controller" id="4HA-XK-dHk" customClass="EditNoteViewController" customModule="Notes_Realm_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O33-yT-sWV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,13 +71,25 @@
                         <viewLayoutGuide key="safeArea" id="r0R-wS-3K4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Note" id="Sh6-rg-gPq">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ffk-UA-DlH"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="aN8-hN-vHH"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ffk-UA-DlH">
+                            <connections>
+                                <action selector="cancel:" destination="4HA-XK-dHk" id="8xW-Hy-EAB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="aN8-hN-vHH">
+                            <connections>
+                                <action selector="done:" destination="4HA-XK-dHk" id="aGP-xx-mz0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contentTextField" destination="DA6-03-Pjx" id="rxZ-Lv-J0C"/>
+                        <outlet property="titleTextField" destination="XFU-QC-nyh" id="JUh-Ly-Ljy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8R-l3-bAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1865" y="-507"/>
+            <point key="canvasLocation" x="1913" y="-164"/>
         </scene>
         <!--Add Note-->
         <scene sceneID="mJN-b9-Lya">
@@ -132,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9I-7D-pl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.8" y="179.46026986506749"/>
+            <point key="canvasLocation" x="1913" y="507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="giE-8I-BZL">
@@ -168,12 +180,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIv-IV-DfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1190.4000000000001" y="180.80959520239881"/>
+            <point key="canvasLocation" x="1279" y="507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nAs-iu-kej">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TU5-PW-Brs" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="edit_note_navigation_controller" automaticallyAdjustsScrollViewInsets="NO" id="TU5-PW-Brs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YeF-Zc-N2W">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -186,7 +198,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnO-iE-WRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188.8" y="-506.44677661169419"/>
+            <point key="canvasLocation" x="1278" y="-164"/>
         </scene>
     </scenes>
 </document>
